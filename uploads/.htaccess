@@ -1,0 +1,20 @@
+# Critical security boundary: uploaded files must never execute as code,
+# even if a malicious file bypassed MIME/extension validation upstream.
+Options -Indexes -ExecCGI
+
+<IfModule mod_php7.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+  php_flag engine off
+</IfModule>
+
+<FilesMatch "\.(php|php\d|phtml|php3|php4|php5|php7|pht|phar|cgi|pl|py|asp|aspx|sh|exe)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} \.(php|php\d|phtml|phar)$ [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
