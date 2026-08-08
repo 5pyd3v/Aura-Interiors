@@ -59,7 +59,7 @@ function draw_placeholder(string $path, int $w, int $h, string $label, array $pa
     }
 
     $brandY = $h - 30;
-    $brand = 'AURA INTERIORS  //  PLACEHOLDER — REPLACE IN ADMIN PANEL';
+    $brand = 'AURA INTERIORS  //  PLACEHOLDER - REPLACE IN ADMIN PANEL';
     $bw = imagefontwidth(2) * strlen($brand);
     imagestring($img, 2, (int) (($w - $bw) / 2), $brandY, $brand, $white);
 
@@ -92,12 +92,12 @@ $targets = [
     'project-retail.jpg' => ['Commercial Retail Showroom', 1200, 900, 4],
     'project-hotel-lobby.jpg' => ['Boutique Hotel Lobby', 1200, 900, 5],
 
-    'before-livingroom.jpg' => ['BEFORE — Living Room', 1000, 700, 4],
-    'after-livingroom.jpg' => ['AFTER — Living Room', 1000, 700, 0],
-    'before-kitchen.jpg' => ['BEFORE — Kitchen', 1000, 700, 4],
-    'after-kitchen.jpg' => ['AFTER — Kitchen', 1000, 700, 2],
-    'before-bedroom.jpg' => ['BEFORE — Bedroom', 1000, 700, 4],
-    'after-bedroom.jpg' => ['AFTER — Bedroom', 1000, 700, 1],
+    'before-livingroom.jpg' => ['BEFORE - Living Room', 1000, 700, 4],
+    'after-livingroom.jpg' => ['AFTER - Living Room', 1000, 700, 0],
+    'before-kitchen.jpg' => ['BEFORE - Kitchen', 1000, 700, 4],
+    'after-kitchen.jpg' => ['AFTER - Kitchen', 1000, 700, 2],
+    'before-bedroom.jpg' => ['BEFORE - Bedroom', 1000, 700, 4],
+    'after-bedroom.jpg' => ['AFTER - Bedroom', 1000, 700, 1],
 
     'gallery-1.jpg' => ['Living Room Detail', 800, 1000, 0],
     'gallery-2.jpg' => ['Kitchen Island', 800, 900, 1],

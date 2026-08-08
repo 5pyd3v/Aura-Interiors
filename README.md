@@ -62,11 +62,22 @@ logic (`includes/functions.php`), and presentation (`includes/header.php` /
 6. In the admin panel → **Settings**, replace all placeholder content:
    company name, logo, favicon, phone/WhatsApp number, address, social
    links, hero text, trust statistics, and the Google Maps embed URL.
-7. Replace demo photography: every image under `assets/images/demo/` is a
-   generated placeholder (labelled "AURA INTERIORS — DEMO IMAGE"). Re-upload
-   real project photography through the admin panel for Projects, Services,
-   Gallery, Before/After, Testimonials, Team and Blog — nothing is
-   hard-coded, everything flows through the database.
+7. Replace demo photography before launch. `assets/images/demo/` currently
+   ships with a mix of:
+   - **Real photography** for the hero, About page, all 6 service cards and
+     all 12 project covers — sourced from [Openverse](https://openverse.org)
+     (CC0 / Public Domain only, no attribution legally required). Full
+     per-image credits are in `assets/images/demo/CREDITS.txt`. Re-run
+     `php tools/fetch-stock-photos.php` any time to re-source fresh photos
+     for these same filenames.
+   - **Generated placeholder graphics** (labelled "AURA INTERIORS —
+     PLACEHOLDER") for gallery, blog, team, and before/after images, made by
+     `php tools/generate-demo-images.php`.
+
+   Both are stand-ins for a real client's own photography. Replace them by
+   uploading through the admin panel for Projects, Services, Gallery,
+   Before/After, Testimonials, Team and Blog — nothing is hard-coded,
+   everything flows through the database.
 
 ## Default Admin Login (development only)
 

@@ -33,8 +33,8 @@ require __DIR__ . '/includes/header.php';
         <div class="service-card reveal reveal-delay-<?= ($i % 3) + 1 ?>">
           <div class="service-card__media">
             <img src="<?= e(img($s['image_path'])) ?>" alt="<?= e($s['title']) ?>" loading="lazy">
-            <div class="service-card__icon"><i class="<?= e($s['icon_class'] ?: 'fa-solid fa-house') ?>"></i></div>
           </div>
+          <div class="service-card__icon"><i class="<?= e($s['icon_class'] ?: 'fa-solid fa-house') ?>"></i></div>
           <div class="service-card__body">
             <h3><?= e($s['title']) ?></h3>
             <p><?= e($s['short_description']) ?></p>

@@ -89,13 +89,18 @@ function asset(string $path): string
 /** Resolve an uploaded/demo image path to a full URL, with a graceful fallback. */
 function img(?string $path, string $fallback = 'assets/images/placeholder.jpg'): string
 {
-    if (empty($path)) {
-        return asset($fallback);
-    }
+    $path = empty($path) ? $fallback : $path;
+
     if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
         return $path;
     }
-    return asset($path);
+
+    $url = asset($path);
+    $full = BASE_PATH . '/' . ltrim($path, '/');
+    if (is_file($full)) {
+        $url .= '?v=' . filemtime($full);
+    }
+    return $url;
 }
 
 function pkr(?string $value): string

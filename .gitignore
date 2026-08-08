@@ -1,0 +1,25 @@
+# ---- Local install state ----
+config/installed.lock
+
+# ---- User-uploaded content (folder structure + .htaccess stay tracked) ----
+uploads/**/*.jpg
+uploads/**/*.jpeg
+uploads/**/*.png
+uploads/**/*.webp
+uploads/**/*.gif
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# ---- Logs ----
+*.log
+error_log
+
+# ---- Dev dependencies (none currently, kept for future PHP tooling) ----
+/vendor/
+composer.lock
